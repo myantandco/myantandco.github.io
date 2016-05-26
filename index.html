@@ -87,11 +87,19 @@
             position: absolute;
             top: 70%;
             left: 15%;
-            background: transparent;
             clear:left;
             color: white;
             font:1em Avenir,Arial,sans-serif;
-            width:80%;
+            /*min-width: 20em;*/
+            /*width: 30em;*/
+            width: 70%;
+            max-width: 30em;
+            padding: 1em;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        #mc_embed_signup legend {
+            margin-bottom: 1.5em;
         }
 
         #mc_embed_signup fieldset {
@@ -102,9 +110,9 @@
         }
 
         #mc_embed_signup input {
-            margin: 1.5em 0.1em;
+            margin: 0.2em 0.5%;
             height: 2.5em;
-            width: 20em;
+
             float: left;
             font-size: 1em;
         }
@@ -113,13 +121,16 @@
             border: 0;
             padding: 0 0.5em;
 
+            /*min-width: 20em;*/
+            width: 76%;
+
             background-color: white;
         }
 
         #mc_embed_signup .button {
             border: 0;
-            padding: 0 2em;
-            width: auto;
+            padding: 0 auto;
+            width: 16%;
 
             background-color: #11e5b2;
             text-transform: uppercase;
