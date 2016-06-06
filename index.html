@@ -151,6 +151,14 @@
             text-transform: uppercase;
         }
         
+        // To recolor smooch bubbles
+            #sk-container #sk-wrapper .sk-msg {
+                background-color: #11e5b2;
+            }
+            #sk-container #sk-wrapper .sk-msg::after {
+                border-left-color: #009D76;
+            }
+        
     </style>
 </head>
 <body>
@@ -181,5 +189,15 @@
         </div>
         <!--End mc_embed_signup-->
     </div>
+    <!-- smooch chat -->
+    <script src="https://cdn.smooch.io/smooch.min.js"></script>
+    <script>
+    Smooch.init({ appToken: '8wdsrpp3g0foc8z5sh7cez5bt', 
+            customText: {
+            headerText: 'Have a question?',
+        }
+    });
+    </script>
+<!--end smooch -->
 </body>
 </html>
