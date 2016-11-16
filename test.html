@@ -117,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Connnected as ' + response.name + '!';
+        '<i class="icon-facebook"></i>&nbsp;  Connnected as ' + response.name + '';
     });
   }
 </script>
