@@ -50,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
-    if (response.status === '<i class="icon-facebook"></i>&nbsp; connected') {
+    if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
     } else if (response.status === 'not_authorized') {
