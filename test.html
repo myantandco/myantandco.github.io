@@ -117,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Connnected as ' + response.name + '!';
     });
   }
 </script>
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
 				<div style="text-align: center" class="divcenter">
-				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" scope="public_profile,email" onlogin="checkLoginState();"><p id="status"></p></button>
+				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" onclick="FB.login();" scope="public_profile,email" onlogin="checkLoginState();"><p id="status"></p></button>
 				<p><a style="cursor: pointer;color: #fff" data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</a></p>
 
 				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
