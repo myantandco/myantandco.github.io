@@ -55,12 +55,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Sign Up ' +
+      document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign Up ' +
         'with facebook';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Sign up ' +
+      document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign up ' +
         'with Facebook';
     }
   }
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
 				<div style="text-align: center" class="divcenter">
-				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" scope="public_profile,email" onlogin="checkLoginState();"><p id="status"><i class="icon-facebook"></i>&nbsp;</p></button>
+				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" scope="public_profile,email" onlogin="checkLoginState();"><p id="status"></p></button>
 				<p style="text-size: 12px; text-decoration: underline;"></i><a style="cursor: pointer;color: #fff" data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</a>
 
 				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
