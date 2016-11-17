@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
 				<div style="text-align: center" class="divcenter">
-				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" onclick="FB.login(function(response) {}, {scope:'email'});" onlogin="checkLoginState();" id="status"><i class="icon-facebook"></i>&nbsp;Sign in With Facebook</button>
+				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" onclick="FB.login(function(response) {}, {scope:'email'});" onlogin="checkLoginState();" data-auto-logout-link="true" id="status"><i class="icon-facebook"></i>&nbsp;Sign in With Facebook</button>
 				</div>
 				<div style="text-align: center">
 				<a style="cursor: pointer; color: #fff;" data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</a>
