@@ -171,16 +171,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
 				<div style="text-align: center" class="divcenter">
-				<div><button class="button button-3d button-xlarge button-rounded button-fill button-blue" onclick="FB.login(function(response) {}, {scope:'email'});" onlogin="checkLoginState();"><p id="status"></p></button></div>
-				<p><a style="cursor: pointer;color: #fff" data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</a></p>
-
+				<button class="button button-3d button-xlarge button-rounded button-fill button-blue" onclick="FB.login(function(response) {}, {scope:'email'});" onlogin="checkLoginState();" id="status"><i class="icon-facebook"></i>&nbsp;Sign in With Facebook</button>
+				</div>
+				<div style="text-align: center">
+				<button data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</button>
 				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 							<div class="modal-dialog modal-sm">
 								<div class="modal-body">
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title" id="myModalLabel">Signing in with Facebook</h4>
+											<h4 class="modal-title" id="myModalLabel">Facebook Sign in</h4>
 										</div>
 										<div class="modal-body">
 											<p class="nobottommargin">During pre-registration this is the only method of sign in we are supporting. We plan to introduce alternative methods for registration in the future. Sorry for the inconvinience. </p>
@@ -189,6 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</div>
+					</div>	
 				</div>
 			</div>
 			
