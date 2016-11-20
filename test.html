@@ -92,7 +92,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
 //            postToken();
-            console.log(response.authResponse.accessToken);
+            postToken(response.authResponse.accessToken, function(user) {
+                console.log('Successful login for: ' + user.name);
+                document.getElementById('status').innerHTML =
+                '<i class="icon-facebook"></i>&nbsp;  Connnected as ' + user.name + '';
+            }, function(errorMessage) {
+                console.error(errorMessage);
+            });
+//            console.log(response.authResponse.accessToken);
 //            testAPI();
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
