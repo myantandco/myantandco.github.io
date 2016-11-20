@@ -52,8 +52,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }`;
 
     function postToken(token, success, failure) {
-        console.log("POSTing " + token);
-
         req = new XMLHttpRequest();
         req.onreadystatechange = function() {
             if (req.readyState === XMLHttpRequest.DONE) {
@@ -75,12 +73,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }));
     }
 
-//    postToken('EAAH5UxdDZCxUBAJkIzV2KiDd4OHjYMTaqB7VqfUhVRZA1dF413yzlXv4ArgjLizwyzpztGx3k8MJ41nrffwi3EZB6jAJEtZAoXM3bEmZCGx8cUAZAZANvGXC8QxyoEvdLOEaTcwsaYOP3J21ZA2dI10MUySXQ9BGdPGIisNzU0MYWQZDZD', function(user) {
-//        console.log(user);
-//    }, function(errorMessage) {
-//        console.log(errorMessage);
-//    });
-
     // Called whenever the 'Login with Facebook' button is pressed
     function login() {
         FB.login(function(_) {
@@ -88,7 +80,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 if (response.status === 'connected') {
                     // Logged into your app and Facebook.
                     postToken(response.authResponse.accessToken, function (user) {
-                        console.log('Successful login for: ' + user.name);
                         window.location = redirect;
                     }, function (errorMessage) {
                         console.error(errorMessage);
@@ -134,7 +125,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // This is called once the Facebook API is initialized
     function onFBInit(response) {
         console.log('onPageInit');
-        console.log(response);
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
         // Full docs on the response object can be found in the documentation
