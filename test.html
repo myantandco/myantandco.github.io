@@ -43,6 +43,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- fb login -->
 <script>
     let kiinbook = 'http://kiinbook.getkiin.com/graphql';
+    let redirect = 'https://medium.com/getkiin/welcome-to-kiin-d1eb69b1903b';
     let mutation = `
     mutation NewFacebookToken($token: String) {
         newFacebookToken(token: $token) {
@@ -91,16 +92,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // for FB.getLoginStatus().
         if (response.status === 'connected') {
             // Logged into your app and Facebook.
-//            postToken();
             postToken(response.authResponse.accessToken, function(user) {
                 console.log('Successful login for: ' + user.name);
-                document.getElementById('status').innerHTML =
-                '<i class="icon-facebook"></i>&nbsp;  Connnected as ' + user.name + '';
+                window.location = redirect;
             }, function(errorMessage) {
                 console.error(errorMessage);
             });
-//            console.log(response.authResponse.accessToken);
-//            testAPI();
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
             document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign Up ' + 'with facebook';
