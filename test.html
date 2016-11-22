@@ -33,16 +33,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	============================================= -->
 	<title>Coming Soon | KiiN</title>
 
+</head>
+
+<body class="stretched">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MRCX4M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- fb login -->
 <script>
-    let kiinbook = 'http://kiinbook.getkiin.com/graphql';
-    let redirect = 'https://medium.com/getkiin/welcome-to-kiin-d1eb69b1903b';
-    let mutation = `
-    mutation NewFacebookToken($token: String) {
-        newFacebookToken(token: $token) {
-            name
-        }
-    }`;
+    var kiinbook = 'http://kiinbook.getkiin.com/graphql';
+    var redirect = 'https://medium.com/getkiin/welcome-to-kiin-d1eb69b1903b';
+    var mutation = "\n" +
+    "mutation NewFacebookToken($token: String) {\n" +
+    "    newFacebookToken(token: $token) {\n" +
+    "        name\n" +
+    "    }\n" +
+    "}";
 
     function postToken(token, success, failure) {
         req = new XMLHttpRequest();
@@ -149,14 +156,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- end fb login -->
-
-</head>
-
-<body class="stretched">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MRCX4M"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 	<!-- Document Wrapper
 	============================================= -->
