@@ -6667,6 +6667,14 @@ body:not(.device-touch) .button {
 	line-height: 52px;
 }
 
+.cta_button_plz {
+		padding: 0 32px;
+		font-size: 18px;
+		letter-spacing: 2px;
+		height: 52px;
+		line-height: 52px;
+	}
+
 .button.button-desc {
 	text-align: left;
 	padding: 24px 34px;
