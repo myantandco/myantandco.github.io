@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-	<meta name="google-site-verification" content="Wrsf_bNUeAEuepjRSDT9J7oBtQ96FuU3y-ZoGAn0BfI" />
+    <meta name="google-site-verification" content="Wrsf_bNUeAEuepjRSDT9J7oBtQ96FuU3y-ZoGAn0BfI" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="KiiN" />
 
@@ -17,9 +17,7 @@
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" 
-      type="image/png" 
-      href="images/favicon.png">
+	<link rel="icon" type="image/png" href="images/favicon.png">
       <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -42,6 +40,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MRCX4M"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- fb login -->
+<script>
+    var kiinbook = 'http://kiinbook.getkiin.com/graphql';
+    var redirect = 'https://medium.com/getkiin/welcome-to-kiin-d1eb69b1903b';
+    var mutation = "\n" +
+    "mutation NewFacebookToken($token: String) {\n" +
+    "    newFacebookToken(token: $token) {\n" +
+    "        name\n" +
+    "    }\n" +
+    "}";
+
+    function postToken(token, success, failure) {
+        req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (req.readyState === XMLHttpRequest.DONE) {
+                if (req.response.errors) {
+                    failure(req.response.errors[0].message);
+                } else {
+                    success(req.response.data.newFacebookToken);
+                }
+            }
+        };
+
+        req.responseType = 'json';
+        req.open('POST', kiinbook);
+        req.setRequestHeader("Content-Type", "application/json");
+        req.setRequestHeader("Accept", "application/json");
+        req.send(JSON.stringify({
+            query: mutation,
+            variables: { token: token }
+        }));
+    }
+
+    // Called whenever the 'Login with Facebook' button is pressed
+    function login() {
+        FB.login(function(_) {
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // Logged into your app and Facebook.
+                    postToken(response.authResponse.accessToken, function (user) {
+                        window.location = redirect;
+                    }, function (errorMessage) {
+                        console.error(errorMessage);
+                    });
+                } else if (response.status === 'not_authorized') {
+                    // The person is logged into Facebook, but not your app.
+                    document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign Up ' + 'with Facebook';
+                } else {
+                    // The person is not logged into Facebook, so we're not sure if
+                    // they are logged into this app or not.
+                    document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign up ' + 'with Facebook';
+                }
+            })
+        }, {scope:'email'});
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '555610244644629',
+            cookie     : true,  // enable cookies to allow the server to access
+                            // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.8' // use graph api version 2.8
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
+            onFBInit(response);
+        });
+    };
+
+    // This is called once the Facebook API is initialized
+    function onFBInit(response) {
+        console.log('onPageInit');
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // The person is logged into Facebook, but not your app.
+            postToken(response.authResponse.accessToken, function(user) {
+                document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Continue as ' + user.name;
+            }, function(errorMessage) {
+                console.error(errorMessage);
+            });
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign Up ' + 'with Facebook';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign up ' + 'with Facebook';
+        }
+    }
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- end fb login -->
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -90,25 +204,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 				<div class="divider divider-center divider-short divider-margin"><i class="icon-time"></i></div>
 
-				<div class="widget-subscribe-form-result"></div>
-				<form style="padding-bottom: 30px;" class="nobottommargin" id="widget-subscribe-form" action="//vagalume.us10.list-manage.com/subscribe/post?u=6aa7dfaba0f1bce00cc9629fd&amp;id=02f6903b4c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<div class="input-group input-group-lg divcenter" style="max-width:600px;">
-						<span class="input-group-addon"><i class="icon-email2"></i></span>
-						<input type="email" name="EMAIL" id="mce-EMAIL" class="form-control required email" placeholder="Enter your Email">
-
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-						<span class="input-group-btn">
-							<button class="btn btn-info" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Notify me</button>
-
-						</span>
-
-					</div>
-				</form>
+				<div style="text-align: center" class="divcenter">
+				<button class="button button-3d cta_button_plz button-rounded button-fill button-blue" onclick="javascript:login()" data-auto-logout-link="true" id="status"><i class="icon-facebook"></i>&nbsp;Sign in With Facebook</button>
+				</div>
+				<div style="text-align: center">
+				<a style="cursor: pointer; color: #fff;" data-toggle="modal" data-target=".bs-example-modal-sm">I don't want to use facebook</a>
+				<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-body">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title" id="myModalLabel">Facebook Sign in</h4>
+										</div>
+										<div class="modal-body">
+											<p class="nobottommargin">During pre-registration this is the only method of sign in we are supporting. We plan to introduce alternative methods for registration in the future. Sorry for the inconvinience. </p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
 			</div>
-			<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+			
 		</section>
 
 
