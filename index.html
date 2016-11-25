@@ -93,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Sign up ' + 'with Facebook';
                 }
             })
-        }, {scope:'email'}), ga('send', 'event', [Signup], [Email Submit];
+        }, {scope:'email'});
     }
 
     window.fbAsyncInit = function() {
@@ -133,6 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // The person is logged into Facebook, but not your app.
             postToken(response.authResponse.accessToken, function(user) {
                 document.getElementById('status').innerHTML = '<i class="icon-facebook"></i>&nbsp; Continue as ' + user.name;
+		ga('send', 'event', 'signup', 'Email Submit');
             }, function(errorMessage) {
                 console.error(errorMessage);
             });
