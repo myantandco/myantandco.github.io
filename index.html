@@ -76,7 +76,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Called whenever the 'Login with Facebook' button is pressed
     function login() {
         FB.login(function(_) {
-            ga('send', 'event', 'Signup', 'Email Submit');
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     // Logged into your app and Facebook.
@@ -125,6 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // This is called once the Facebook API is initialized
     function onFBInit(response) {
+        ga('send', 'event', 'Signup', 'Email Submit');
         console.log('onPageInit');
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
