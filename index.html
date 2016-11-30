@@ -46,9 +46,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var redirect = 'https://medium.com/getkiin/welcome-to-kiin-d1eb69b1903b';
     var mutation = "\n" +
     "mutation NewFacebookToken($token: String) {\n" +
-    "    newFacebookToken(token: $token) {\n" +
-    "        name\n" +
-    "    }\n" +
+    "   newFacebookToken(token: $token) {\n" +
+    "       name\n" +
+    "   }\n" +
     "}";
 
     function postToken(token, success, failure) {
@@ -76,6 +76,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Called whenever the 'Login with Facebook' button is pressed
     function login() {
         FB.login(function(_) {
+            ga('send', 'event', 'Signup', 'Email Submit');
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     // Logged into your app and Facebook.
