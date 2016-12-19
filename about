@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	 <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5MRCX4M');</script>
+<!-- End Google Tag Manager -->
+
+	<!-- Document Title
+	============================================= -->
+	<title>Welcome to the beta | Kiin</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header dark full-header" data-sticky-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="index.html"><div>Home</div></a>
+							
+							</li>
+							
+						</ul>
+
+						
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-parallax page-title-dark" style="padding: 250px 0; background-image: url('images/parallax.jpg'); background-size: cover; background-position: center center;" data-stellar-background-ratio="0.4">
+
+			<div class="container clearfix">
+				<h1>Welcome to Kiin</h1>
+				<span>We've added you to the list of beta testers</span>
+				
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="">
+
+						<div class="heading-block fancy-title nobottomborder title-bottom-border">
+							<h4>More About <span>Us</span>.</h4>
+						</div>
+
+						<p>We’ve been getting a lot of questions about what we’re up to, so here’s a brief summary of what we’re building and some answers to commonly asked questions.</p>
+<p><i><strong>First, some context.</strong> Some time ago, we started working on a wearable slightly different than the ones you’re used to seeing today. When we set out to build it, we had a few pre-requisites tied to our dissatisfaction with what is currently available in the market. We labeled these our “required characteristics.”</i></p>
+<h2>Required Characteristics</h2>
+
+						<div class="col_half panel panel-default">
+							<div class="panel-heading">
+								<h2 class="panel-title">Pre-Existing Adoption</h2>
+							</div>
+							<div class="panel-body">
+							Our wearable needed to have pre-existing adoption (we should already be buying the house that our wearables live in)
+							</div>
+						</div>
+						<div class="col_half panel panel-default col_last">
+							<div class="panel-heading">
+								<h2 class="panel-title">Friction Free</h2>
+							</div>
+							<div class="panel-body">
+							Our wearable should be friction free (you shouldn’t even know it’s there)
+							</div>
+						</div>
+						<div class="col_half panel panel-default">
+							<div class="panel-heading">
+								<h2 class="panel-title">Short Renweal Cycle</h2>
+							</div>
+							<div class="panel-body">
+							Our wearable should have a renewal cycle of no more than one year.
+							</div>
+						</div>
+						<div class="col_half panel panel-default col_last">
+							<div class="panel-heading">
+								<h2 class="panel-title">Demographic Agnostic</h2>
+							</div>
+							<div class="panel-body">
+							It should be demographic agnostic. (whether you’re 14 yrs or 65 yrs, it should be accessible to you)
+							</div>
+						</div>
+						<div class="col_half panel panel-default">
+							<div class="panel-heading">
+								<h2 class="panel-title">Holistic</h2>
+							</div>
+							<div class="panel-body">
+							It needed to be holistic, not activity specific.
+							</div>
+						</div>
+						<div class="col_half panel panel-default col_last">
+							<div class="panel-heading">
+								<h2 class="panel-title">Growth</h2>
+							</div>
+							<div class="panel-body">
+							Lastly, it needed to identify areas of growth and opportunity.
+							</div>
+						</div>
+						<h2>End Result</h2>
+<p>We’re happy with what we’ve been able to create so far given this vision, and we’re very close to announcing it to the world.
+By signing up now, you are joining a community of our earliest users. Building something like this requires A LOT of diversity in people, lifestyles, activities, and scenarios. Our plan is to start reaching out to people we identify as ideal early users.
+</p>
+
+					</div>
+
+
+				<h2>Frequently Asked Questions</h2>
+
+				<div class="list-group">
+							<a href="http://getkiin.com" class="list-group-item">
+								<h4 class="list-group-item-heading">What does it mean to be one of Kiin’s early human guinea pigs?</h4>
+								<p class="list-group-item-text">Guinea pig basically means beta users. We need a diversity of people from all walks of life to build something great. If you’ve signed up on the kiin website, then we may reach out to you to ask you to participate in some testing. Participation is completely optional.</p>
+							</a>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">What is so different about your wearable?</h4>
+								<p class="list-group-item-text">We’ve been perpetually let down by promises of single products changing and optimizing our lives through the collection of bio-metric data. We think there are a few critical elements that have led to this failure (our required characteristics among them). Without giving away too much, our product addresses these critical elements.</p>
+							</div>
+						</div>
+					</div>	
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+		
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2014 All Rights Reserved by Myant Inc.<br>
+						
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="http://facebook.com/getkiin" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							
+						</div>
+
+						<div class="clear"></div>
+
+						<i class="icon-envelope2"></i> info@getkiin.com
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
